@@ -1,10 +1,10 @@
 import React from "react";
 import "./student.css";
 import { Link, useNavigate } from "react-router-dom";
-import App from "../App";
-import StudentDesc from "./Student-Desc";
-import { useContext } from "react";
-import Store from "../Store/Store";
+
+
+
+
 
 const Student = (props) => {
   // const [displayData] = useContext(Store);
