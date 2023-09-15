@@ -1,6 +1,6 @@
 import React from "react";
 import "./studentdesc.css";
-import { useNavigate } from "react-router-dom";
+
 import StudentDescForm from "./StudentDescForm";
 function StudentDesc(props) {
   const saveStudentDataHandler = (enteredStudentData) => {
