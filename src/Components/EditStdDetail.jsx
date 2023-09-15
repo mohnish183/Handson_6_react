@@ -1,6 +1,6 @@
 import React from "react";
 import "./studentdesc.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 const EditStdDetail = () => {
   const navigation = useNavigate();
   return (
