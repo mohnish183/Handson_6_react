@@ -1,0 +1,45 @@
+.student-head {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8vh;
+  padding: 4vh;
+}
+
+.add-std-btn {
+  width: 20vw;
+  height: 8vh;
+  border-radius: 4vh;
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  top: 2vh;
+  cursor: pointer;
+}
+
+.std-form {
+  width: 90%;
+  margin-left: 12vh;
+  text-align: left;
+  border: 1px solid rgb(133, 130, 130);
+  border-radius: 1vh;
+}
+table {
+  border-collapse: collapse;
+}
+table th {
+  width: 20%;
+  padding: 2vh;
+  border: 1px solid rgb(133, 130, 130);
+  border-left: none;
+  border-right: none;
+}
+.name {
+  width: 40%;
+}
+table tr td {
+  height: 8vh;
+  padding: 2vh;
+  border: 1px solid rgb(133, 130, 130);
+  border-right: 1px solid white;
+  border-left: none;
+}
