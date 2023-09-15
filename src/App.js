@@ -4,7 +4,7 @@ import Home from "./Components/Home";
 import Student from "./Components/Student";
 import Contact from "./Components/Contact";
 import StudentDesc from "./Components/Student-Desc";
-import RoutesCompo from "./Routes/Routes";
+
 import { useState } from "react";
 import EditStdDetail from "./Components/EditStdDetail";
 const DummyData = [
