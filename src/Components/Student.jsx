@@ -1,17 +1,14 @@
 import React from "react";
 import "./student.css";
-import { Link, useNavigate } from "react-router-dom";
-import App from "../App";
-import StudentDesc from "./Student-Desc";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import Store from "../Store/Store";
 
-const Student = (props) => {
-  // const [displayData] = useContext(Store);
-  // console.log(displayData);
-  // Store is a component
+const Student = () => {
+  const ContextData = useContext(Store);
 
   const navigation = useNavigate();
+
   return (
     <>
       <div className="student-head">
@@ -32,18 +29,19 @@ const Student = (props) => {
             <th>Age</th>
             <th>Course</th>
             <th>Batch</th>
-            <th>Change</th>
+            <th>Edit</th>
           </tr>
-          {props.stdData.map((item, index) => {
+          {ContextData.stdData.map((item, index) => {
             return (
               <tr key={index}>
-                {/* {console.log(index)} */}
                 <td className="name">{item.name}</td>
                 <td>{item.age}</td>
                 <td>{item.course}</td>
                 <td>{item.batch}</td>
 
-                <td>{<Link to="/EditStdDetail">Edit</Link>}</td>
+                <NavLink to={`/EditStdDetail/${index}`}>
+                  <td>Edit</td>
+                </NavLink>
               </tr>
             );
           })}

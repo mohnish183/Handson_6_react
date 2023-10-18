@@ -1,36 +1,65 @@
 import React from "react";
 import "./studentdesc.css";
 import { useNavigate } from "react-router-dom";
-import StudentDescForm from "./StudentDescForm";
-function StudentDesc(props) {
-  const saveStudentDataHandler = (enteredStudentData) => {
-    const studentData = {
-      ...enteredStudentData,
-      id: Math.random().toString(),
-    };
-    console.log(studentData);
-    props.onAddStudent(studentData);
+
+import { useContext } from "react";
+import Store from "../Store/Store";
+function StudentDesc() {
+  const contextData = useContext(Store);
+
+  const navi = useNavigate();
+
+  const updateObj = {
+    name: "",
+    age: "",
+    course: "",
+    batch: "",
+  };
+  const changeHandler = (event) => {
+    updateObj[event.target.name] = event.target.value;
+  };
+  const submit = () => {
+    contextData.stdData.push(updateObj);
+
+    navi(-1);
   };
   return (
-    <div>
-      <StudentDescForm onSaveStudentData={saveStudentDataHandler} />
-    </div>
+    <>
+      <div className="std-container">
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          onChange={changeHandler}
+        />{" "}
+        <br />
+        <input
+          type="text"
+          placeholder="Age"
+          name="age"
+          onChange={changeHandler}
+        />{" "}
+        <input
+          type="text"
+          placeholder="course"
+          name="course"
+          onChange={changeHandler}
+        />{" "}
+        <br />
+        <input
+          type="text"
+          placeholder="Batch"
+          name="batch"
+          onChange={changeHandler}
+        />{" "}
+        <br />
+      </div>
+      <div className="std-btn">
+        <button onClick={() => navi(-1)}>Cancel</button>
+        <button onClick={() => submit()}> Submit</button>
+      </div>
+    </>
   );
-  // const navigation = useNavigate();
-  // return (
-  //   <>
-  //     <div className="std-container">
-  //       <input type="text" placeholder="Name" />
-  //       <input type="text" placeholder="Age" />
-  //       <input type="text" placeholder="Course" />
-  //       <input type="text" placeholder="Batch" />
-  //     </div>
-  //     <div className="std-btn">
-  //       <button onClick={() => navigation("/Student")}>Cancel</button>
-  //       <button>Submit</button>
-  //     </div>
-  //   </>
-  // );
 }
 
 export default StudentDesc;
